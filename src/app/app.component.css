@@ -1,0 +1,10 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.container {
+  padding: 20px;
+  margin: 20px;
+}
+
+.header {
+  width: 100%;
+}

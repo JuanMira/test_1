@@ -1,0 +1,45 @@
+<mat-form-field appearance="standard">
+  <mat-label>Filter</mat-label>
+  <input matInput placeholder="Ex. Mia" #input (keyup)="applyFilter($event)" />
+</mat-form-field>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="empleados" matSort #table>
+    <ngContainer matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>#</th>
+      <td mat-cell *matCellDef="let row">{{ row.id }}</td>
+    </ngContainer>
+
+    <ngContainer matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef>Nombre</th>
+      <td mat-cell *matCellDef="let row">{{ row.nombre }}</td>
+    </ngContainer>
+
+    <ngContainer matColumnDef="salario">
+      <th mat-header-cell *matHeaderCellDef>Salario</th>
+      <td mat-cell *matCellDef="let row">{{ row.salario }}</td>
+    </ngContainer>
+
+    <ngContainer matColumnDef="fecha_ingreso">
+      <th mat-header-cell *matHeaderCellDef>Fecha ingreso</th>
+      <td mat-cell *matCellDef="let row">{{ row.fecha_ingreso }}</td>
+    </ngContainer>
+
+    <ngContainer matColumnDef="option" class="item">
+      <th mat-header-cell *matHeaderCellDef>Options</th>
+      <td mat-cell *matCellDef="let row">
+        <button mat-icon-button color="primary" (click)="solicitud(row.id)">
+          <mat-icon>assessment</mat-icon>
+        </button>
+      </td>
+    </ngContainer>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">
+        No data matching the filter {{ input.value }}
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,38 @@
+<div class="form">
+  <form (ngSubmit)="handleSubmit()" #f="ngForm">
+    <mat-form-field>
+      <mat-label>Nombre:</mat-label>
+      <input
+        matInput
+        placeholder="ex. Juan"
+        name="nombre"
+        [(ngModel)]="nombre"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Salario:</mat-label>
+      <input
+        matInput
+        placeholder="ex 2000"
+        [(ngModel)]="salario"
+        type="number"
+        name="salario"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Fecha:</mat-label>
+      <input
+        matInput
+        [(ngModel)]="fechaIngreso"
+        type="date"
+        required
+        name="fechaIngreso"
+      />
+    </mat-form-field>
+    <br />
+    <button type="submit" mat-flat-button color="primary">Enviar</button>
+  </form>
+</div>

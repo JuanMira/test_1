@@ -1,0 +1,39 @@
+<div class="form">
+  <form (ngSubmit)="handleSubmit()" #f="ngForm">
+    <mat-form-field>
+      <mat-label>Codigo:</mat-label>
+      <input
+        matInput
+        placeholder="ex. Juan"
+        name="codigo"
+        [(ngModel)]="codigo"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Descripcion:</mat-label>
+      <input
+        matInput
+        placeholder="ex 2000"
+        [(ngModel)]="descripcion"
+        type="number"
+        name="descripcion"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Resumen:</mat-label>
+      <input
+        matInput
+        placeholder="ex 2000"
+        [(ngModel)]="resumen"
+        type="resumen"
+        name="descripcion"
+        required
+      />
+    </mat-form-field>
+
+    <br />
+    <button type="submit" mat-flat-button color="primary">Enviar</button>
+  </form>
+</div>
